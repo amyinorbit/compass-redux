@@ -8,13 +8,5 @@
 #include <compass/runtime.h>
 #include <compass/value.h>
 
-typedef struct memory_heap_t memory_heap_t;
-
-struct compass_vm_t {
-    memory_heap_t *heap;
-    compass_value_t *stack;
-
-    size_t code_size;
-    uint32_t *code;
-};
+typedef uint32_t compass_ptr_t;
 
