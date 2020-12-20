@@ -1,5 +1,5 @@
-[submodule "packages/unic"]
-	path = packages/unic
+[submodule "packages/UniC"]
+	path = packages/UniC
 	url = git@github.com:amyinorbit/UniC.git
 [submodule "packages/ccore"]
 	path = packages/ccore
