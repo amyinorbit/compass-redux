@@ -58,12 +58,18 @@ struct compass_str_t {
 };
 
 // No macros here, bitten once too many
-static inline compass_value_t compass_true() { return (compass_value_t){.kind=COMPASS_VALUE_BOOL, .i32=1}; }
-static inline compass_value_t compass_false() { return (compass_value_t){.kind=COMPASS_VALUE_BOOL, .i32=0}; }
-static inline compass_value_t compass_int(int32_t v) { return (compass_value_t){.kind=COMPASS_VALUE_INT, .i32=v}; }
-static inline compass_value_t compass_float(float v) { return (compass_value_t){.kind=COMPASS_VALUE_FLOAT, .f32=v}; }
-static inline compass_value_t compass_obj(void *r) { return (compass_value_t){.kind=COMPASS_VALUE_OBJ, .obj=r}; }
-static inline compass_value_t compass_str(uint32_t r) { return (compass_value_t){.kind=COMPASS_VALUE_STR, .ref=r}; }
+static inline compass_value_t compass_true()
+{ return (compass_value_t){.kind=COMPASS_VALUE_BOOL, .i32=1}; }
+static inline compass_value_t compass_false()
+{ return (compass_value_t){.kind=COMPASS_VALUE_BOOL, .i32=0}; }
+static inline compass_value_t compass_int(int32_t v)
+{ return (compass_value_t){.kind=COMPASS_VALUE_INT, .i32=v}; }
+static inline compass_value_t compass_float(float v)
+{ return (compass_value_t){.kind=COMPASS_VALUE_FLOAT, .f32=v}; }
+static inline compass_value_t compass_obj(void *r)
+{ return (compass_value_t){.kind=COMPASS_VALUE_OBJ, .obj=r}; }
+static inline compass_value_t compass_str(uint32_t r)
+{ return (compass_value_t){.kind=COMPASS_VALUE_STR, .ref=r}; }
 
 
 

@@ -9,6 +9,8 @@ project(compass
 option(COMPASS_BUILD_CLI "Build the deafult command line interface" ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+add_subdirectory(packages/unic)
+add_subdirectory(packages/ccore)
 
 add_definitions(
     "-DCOMPASS_VERSION=\"${PROJECT_VERSION}\""
@@ -21,6 +23,7 @@ find_package(ccore REQUIRED)
 add_library(${PROJECT_NAME} STATIC src/vm.c)
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
+target_link_libraries(${PROJECT_NAME} PUBLIC ccore unic)
 target_compile_features(${PROJECT_NAME} PUBLIC c_std_11)
 set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_include_directories(${PROJECT_NAME}
