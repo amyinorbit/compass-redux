@@ -7,3 +7,14 @@
 //===--------------------------------------------------------------------------------------------===
 #include "vm.h"
 
+struct compass_vm_t {
+    compass_ptr_t frame;
+    compass_ptr_t locals;
+    compass_ptr_t stack;
+    compass_ptr_t rom;
+    compass_ptr_t ram;
+    compass_ptr_t entry;
+
+    uint8_t *stack;
+    uint8_t *heap;
+};
