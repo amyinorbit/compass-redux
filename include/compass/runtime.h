@@ -14,6 +14,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+typedef uint32_t compass_ptr_t;
+
 
 typedef struct compass_vm_t compass_vm_t;
 

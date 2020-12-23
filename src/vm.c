@@ -6,11 +6,12 @@
 // =^•.•^=
 //===--------------------------------------------------------------------------------------------===
 #include "vm.h"
+#include "parser.h"
 
 struct compass_vm_t {
     compass_ptr_t frame;
     compass_ptr_t locals;
-    compass_ptr_t stack;
+    compass_ptr_t sp;
     compass_ptr_t rom;
     compass_ptr_t ram;
     compass_ptr_t entry;
@@ -18,3 +19,8 @@ struct compass_vm_t {
     uint8_t *stack;
     uint8_t *heap;
 };
+
+
+
+
+

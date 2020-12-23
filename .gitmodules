@@ -1,3 +1,6 @@
 [submodule "packages/ccore"]
 	path = packages/ccore
 	url = git@github.com:amyinorbit/ccore.git
+[submodule "packages/unic"]
+	path = packages/unic
+	url = git@github.com:amyinorbit/UniC.git

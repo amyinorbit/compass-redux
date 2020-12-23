@@ -8,7 +8,8 @@
 #pragma once
 #include <stdint.h>
 #include <stdbool.h>
-
+#include <unic/unic.h>
+#include <stddef.h>
 
 /// Because that can get tricky with a language parser, we don't encode specific meaning of words
 /// in lexed tokens. This is done through semantic analysis later on.
@@ -36,11 +37,15 @@ typedef struct {
     const char *end;
     const char *current;
     
-    
-    
-    
-#ifdef DEBUG_PARSE_STACK
-    
-#endif
+    token_t current_token;
+    unicode_scalar_t current_char;
 } parser_t;
+
+
+void parser_init(const char *input, size_t size);
+
+bool parser_next_token(parser_t *parser);
+
+
+
 

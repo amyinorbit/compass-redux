@@ -10,6 +10,7 @@
 #include <compass/value.h>
 
 
+
 compass_value_t compass_obj_new(compass_vm_t *vm);
 
 
