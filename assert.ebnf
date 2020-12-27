@@ -1,0 +1,39 @@
+direction-table   = 'directions' ':' enum<direction-decl> '.'
+direction-desc    = direction ('and' direction)?
+
+synonyms-table    = 'synonyms' ':' enum<synonym-decl>
+synonym-decl      = name-group ':' list<name-group> // maybe change to single words
+
+
+class-decl        = class-head class-body 'end' 'of' class-name '.'
+class-head        = name-group 'is' name-group ('(' list<location-desc> ')')? ':'
+location-desc     = subject being direction ('of'|'from') name-group
+
+exit-list         = definite? 'exit*s' being list<exit-desc>
+exit-desc         = direction ('to') name-group ('one' 'way')?
+
+subject           = 'it' | name-group
+name-group        = (definite | indefinite)? word*
+word              = (\w*)!<being, having, of>
+
+list<T>           = T (',' T)* ('and' T)?
+enum<T>           = ('-' T lf)+
+
+verb-decl         = word param-decl? 'is' 'a' 'verb': block
+param-decl        = direct-object? phrasal? indirect-object?
+direct-object     = variable
+indirect-object   = preposition variable
+variable          = '%' word
+
+block             = statement
+                  | '[' statement* ']'
+statement         = action
+                  | check
+                  | conditional
+check             = 'check' condition 'else' block
+conditional       = 'if' condition 'then' block ('else' block)?
+
+verb-cond         = 'before' infinitive ':' 'check' condition 'else' block
+
+
+
